@@ -1,11 +1,21 @@
 #include "Slika.h"
+#include <fstream>
 
 int main() {
-	int n, m, k;
+	ifstream ulaz("podaci.txt");
+	if (!ulaz)
+	{
+		cerr << "greska pri ucitavanju fajla" << endl;
+	}
+
+	int* n = new int();
+	int* m = new int();
+	int* k = new int();
+
 	cout << "Unesite broj temena za prvi poligon: ";
-	cin >> n;
-	Poligon* p1 = new Poligon(n);
-	cin >> *p1;
+	ulaz >> *n;
+	Poligon* p1 = new Poligon(*n);
+	ulaz >> *p1;
 	cout << "Poligon pre preslikavanja: " << *p1 << endl;
 	p1->preslikajXKoordinate();
 	cout << "Poligon nakon preslikavanja u odnosu na X osu: " << *p1 << endl;
@@ -13,9 +23,9 @@ int main() {
 	cout << "Poligon nakon preslikavanja u odnosu na Y osu: " << *p1 << endl;
 
 	cout << "Unesite broj temena za drugi poligon: ";
-	cin >> m;
-	Poligon* p2 = new Poligon(m);
-	cin >> *p2;
+	ulaz >> *m;
+	Poligon* p2 = new Poligon(*m);
+	ulaz >> *p2;
 	cout << "Poligon pre preslikavanja: " << *p2 << endl;
 	p2->preslikajXKoordinate();
 	cout << "Poligon nakon preslikavanja u odnosu na X osu: " << *p2 << endl;
@@ -23,21 +33,25 @@ int main() {
 	cout << "Poligon nakon preslikavanja u odnosu na Y osu: " << *p2 << endl;
 
 	cout << "Unesite maksimalan broj poligona za sliku: ";
-	cin >> k;
-	Slika slika(k);
-	slika.dodajPoligon(p1);
-	slika.dodajPoligon(p2);
+	ulaz >> *k;
+	Slika* slika = new Slika(*k);
+	slika->dodajPoligon(p1);
+	slika->dodajPoligon(p2);
 
-	for (int i = 0; i < k - 2; ++i) {
+	for (int i = 0; i < *k - 2; ++i) {
 		int brojTemena;
 		cout << "Unesite broj temena za poligon: " << i + 3 << ": ";
-		cin >> brojTemena;
+		ulaz >> brojTemena;
 		Poligon* p = new Poligon(brojTemena);
-		cin >> *p;
-		slika.dodajPoligon(p);
+		ulaz >> *p;
+		slika->dodajPoligon(p);
 	}
 
-	cout << "\n" << slika;
+	cout << "\n" << *slika;
+
+	delete p1;
+	delete p2;
+	delete k;
 
 	return 0;
 }
