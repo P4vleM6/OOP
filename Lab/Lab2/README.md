@@ -1,0 +1,1 @@
+Dodatan zadatak koji su nam asistenti dali u terminu vezbi je bio da se svi objekti u main-u prebace u dinamicku zonu memorije,inicijalno main nije trebao izgledati ovako,nekim grupama daju drugacije zadatke,npr da se doda neka operatorska funkcija
