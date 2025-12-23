@@ -1,0 +1,1 @@
+Dodatan zadatak koji su nam asistenti dali u terminu vezbi je bio da dodamo copy konstruktor za poligon,sto nije bilo na spisku inicijalnih zahteva. Nekim grupama su trazili operator dodele umesto copy konstruktora ali uglavnom traze copy konstruktor idk
