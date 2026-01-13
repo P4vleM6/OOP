@@ -1,1 +1,1 @@
-
+U terminu vezbi dodatan zadatak je ponovo bio da dodamo jos jednu izvedenu klasu,moja preporuka je da se doda operacija moduo jer nema suprotnu operaciju i jednostavno je da se napise,ako npr dodas stepenovanje i kazes da je korenovanje suprotna op a nisi definisao i implementirao i klasu korenovanje (ili obrnuto) bas ce da smaraju za to.
